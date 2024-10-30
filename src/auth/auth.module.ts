@@ -6,11 +6,12 @@ import { JwtModule } from '@nestjs/jwt';
 import { UsersModule } from 'src/users/users.module';
 import { config } from 'dotenv';
 import { JwtStrategy } from './jwt.strategy';
+import { TasksModule } from 'src/tasks/tasks.module';
 config(); 
 
 @Module({
   imports: [
-    forwardRef(() => UsersModule),
+    forwardRef(() => UsersModule),TasksModule,
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET,

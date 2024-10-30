@@ -12,9 +12,15 @@ export class TasksService {
     private tasksRepository: Repository<Task>,
   ) {}
 
+  async findAll(): Promise<Task[]> {
+    return this.tasksRepository.find();
+  }
+
   async createTask(createTaskDto: CreateTaskDto, user: User): Promise<Task> {
     const task = this.tasksRepository.create({ ...createTaskDto, user });
-    return await this.tasksRepository.save(task);
+    console.log(task);
+    await this.tasksRepository.save(task);
+    return task;
   }
 
   async getTasks(user: User): Promise<Task[]> {   
@@ -31,7 +37,7 @@ export class TasksService {
 
   async updateTask(id: number, updateTaskDto: CreateTaskDto, user: User): Promise<Task> {
     const task = await this.getTaskById(id, user);
-    Object.assign(task, updateTaskDto); // Actualiza la tarea
+    Object.assign(task, updateTaskDto); 
     return this.tasksRepository.save(task);
   }
 
