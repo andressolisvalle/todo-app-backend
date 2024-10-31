@@ -1,7 +1,7 @@
 <h1 align="center"># TODO APP BACKEND </h1>
 
 # Instrucciones de Configuración
-1. Al moneto de clonar le repositorio ejecutar el comando npm install la cual va a permitir la instalacion de las dependencias del proyecto.
+1. Al mometo de clonar le repositorio ejecutar el comando npm install la cual va a permitir la instalacion de las dependencias del proyecto.
 2. configura las variables de entorno: crea un archivo .env en el directorio del proyecto y agregales las credenciales de tu base de datos, secret key etc.
   Ejemplo:
   JWT_SECRET=secret_key
