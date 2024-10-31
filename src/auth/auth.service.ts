@@ -26,7 +26,6 @@ export class AuthService {
     
       async login(username: string, password: string): Promise<{ accessToken: string }> {
         const user = await this.validateUser(username, password);
-        console.log(user);
         if (!user) {
           throw new UnauthorizedException();
         }
